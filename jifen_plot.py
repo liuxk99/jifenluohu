@@ -8,7 +8,7 @@ import pandas as pd
 df = pd.read_csv("jifen_data.csv")
 
 # 设置绘图风格
-plt.figure(figsize=(12, 7))
+plt.figure(figsize=(12, 8.4))
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 解决中文显示问题
 plt.rcParams['axes.unicode_minus'] = False
 
@@ -32,7 +32,7 @@ ax.yaxis.set_minor_locator(ticker.MultipleLocator(0.1))
 first_date = df.iloc[0]["日期"]      # 第一行
 last_date = df.iloc[-1]["日期"]      # 最后一行
 
-plt.title(f"各区段分值变换趋势图 ({first_date}-{last_date})", fontsize=14)
+plt.title(f"北京市积分落户2026年各区段分值趋势图 ({first_date}-{last_date})", fontsize=14)
 plt.xlabel("日期", fontsize=12)
 plt.ylabel("分值", fontsize=12)
 
