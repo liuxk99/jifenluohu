@@ -46,7 +46,7 @@ for col, color in zip(columns, colors):
 ax = plt.gca()
 
 # 2. 设置 Y 轴主刻度的间隔为 0.1
-ax.yaxis.set_major_locator(ticker.MultipleLocator(0.5))
+ax.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
 # 3. (可选) 如果图表太拥挤，可以只显示次要刻度线而不显示标签
 ax.yaxis.set_minor_locator(ticker.MultipleLocator(0.1))
 
@@ -69,6 +69,7 @@ plt.legend(title="数据区段", bbox_to_anchor=(1.05, 1), loc='upper left', tit
 
 # 自动调整布局
 plt.tight_layout()
+plt.axhline(y=119.84, color='red', linewidth=1, linestyle='--')
 # plt.show()
 
 # 4. 将图像写入文件
