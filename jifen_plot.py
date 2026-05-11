@@ -34,7 +34,7 @@ def plot_scores(score_data_csv, figure_file,
     df = pd.read_csv(score_data_csv)
 
     # 设置绘图风格
-    plt.figure(figsize=(12, 8.4))
+    plt.figure(figsize=(0.6 * len(df), 8.4))
     # plt.rcParams['font.sans-serif'] = ['SimHei']  # 解决中文显示问题
     plt.rcParams['axes.unicode_minus'] = False
 
@@ -80,5 +80,5 @@ def plot_scores(score_data_csv, figure_file,
     # 4. 将图像写入文件
     # dpi=300 表示设置分辨率为300，保证图片清晰
     # bbox_inches='tight' 确保图例和标签都在图片范围内
-    plt.savefig(figure_file + score_data_csv + ".png", dpi=300, bbox_inches='tight')
+    plt.savefig(figure_file + "-" + score_data_csv + ".png", dpi=300, bbox_inches='tight')
     pass

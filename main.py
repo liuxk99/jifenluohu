@@ -4,3 +4,5 @@ from jifen_plot import plot_scores
 
 plot_scores(score_data_csv=DEFAULT_SCORE_DATA_CSV, figure_file=DEFAULT_FIGURE_FILE,
             last_year_baseline=DEFAULT_LAST_YEAR_BASELINE, predicted_baseline=DEFAULT_PREDICTED_BASELINE)
+plot_scores(score_data_csv="jifen_data_2025.csv", figure_file=DEFAULT_FIGURE_FILE,
+            last_year_baseline=114.46, predicted_baseline=117.33)
