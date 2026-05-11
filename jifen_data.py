@@ -13,5 +13,5 @@ data = {
 
 # 导出为 CSV
 df_export = pd.DataFrame(data)
-df_export.to_csv("jifen_data.csv", index=False, encoding='utf-8-sig')
-print("数据已导出为 jifen_data.csv")
+df_export.to_csv("jifen_data_2026.csv", index=False, encoding='utf-8-sig')
+print("数据已导出为 jifen_data_2026.csv")
