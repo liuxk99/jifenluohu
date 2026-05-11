@@ -33,8 +33,16 @@ def plot_scores(score_data_csv, figure_file,
     # 确保 jifen_data_2026.csv 和这个脚本在同一个文件夹里
     df = pd.read_csv(score_data_csv)
 
+    # 1. 排除第一列并转换为 NumPy 数组 (.values)
+    # 2. 使用 numpy 的 max 和 min 函数计算全局极值
+    data_array = df.iloc[:, 1:].values
+    overall_range_np = data_array.max() - min(data_array.min(), last_year_baseline)
+
+    print(f"\n使用 NumPy 方法计算的总体范围是: {overall_range_np}")
+
+    print(f"NR: {len(df)}")
     # 设置绘图风格
-    plt.figure(figsize=(0.6 * len(df), 8.4))
+    plt.figure(figsize=(0.6 * len(df), 1.5 * overall_range_np))
     # plt.rcParams['font.sans-serif'] = ['SimHei']  # 解决中文显示问题
     plt.rcParams['axes.unicode_minus'] = False
 
@@ -58,7 +66,7 @@ def plot_scores(score_data_csv, figure_file,
     first_date = df.iloc[0]["日期"]  # 第一行
     last_date = df.iloc[-1]["日期"]  # 最后一行
 
-    plt.title(f"北京市积分落户2026年各区段分值趋势图 ({first_date}-{last_date})", fontproperties=font_prop, fontsize=14)
+    plt.title(f"北京市积分落户各区段分值趋势图 ({first_date}-{last_date})", fontproperties=font_prop, fontsize=14)
     plt.xlabel("日期", fontproperties=font_prop, fontsize=12)
     plt.ylabel("分值", fontproperties=font_prop, fontsize=12)
 
