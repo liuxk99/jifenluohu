@@ -222,3 +222,6 @@ Trends*.png
 
 # IDE
 .idea
+
+# macOS
+.DS_Store
